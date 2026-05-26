@@ -91,10 +91,11 @@
 
   .hero-main img, .hero-side-top img, .hero-side-bot img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
     transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
-    filter: brightness(0.82);
+    filter: brightness(0.9);
   }
 
   .hero-main:hover img { transform: scale(1.04); filter: brightness(0.95); }
@@ -679,39 +680,49 @@ function buildFilters() {
   });
 }
 
+function pickRandomHeroes() {
+  // Shuffle a copy of allPhotos and pick the first 3
+  const shuffled = [...allPhotos].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(3, shuffled.length));
+}
+
 function buildHero() {
   if (allPhotos.length === 0) return;
 
-  const main = allPhotos[0];
+  const heroes = pickRandomHeroes();
+  // Store their real indices in allPhotos so lightbox works correctly
+  const heroIndices = heroes.map(h => allPhotos.indexOf(h));
+
+  const main = heroes[0];
   const heroMain = document.getElementById('hero-main');
   const img0 = document.createElement('img');
   img0.src = main.src;
   img0.alt = main.car || '';
   heroMain.insertBefore(img0, heroMain.firstChild);
-  heroMain.onclick = () => openLightbox(0);
+  heroMain.onclick = () => openLightbox(heroIndices[0]);
   document.getElementById('hero-title').textContent = main.car || '';
   document.getElementById('hero-meta').textContent = main.meta || '';
 
-  if (allPhotos.length > 1) {
-    const top = allPhotos[1];
+  if (heroes.length > 1) {
+    const top = heroes[1];
     const sideTop = document.getElementById('hero-side-top');
     const img1 = document.createElement('img');
     img1.src = top.src;
     img1.alt = top.car || '';
     sideTop.insertBefore(img1, sideTop.firstChild);
-    sideTop.onclick = () => openLightbox(1);
+    sideTop.onclick = () => openLightbox(heroIndices[1]);
     document.getElementById('side-label-top').innerHTML =
       '<div class="tag">&#9632; ' + (top.cat || '') + '</div><h3>' + (top.car || '') + '</h3>';
   }
 
-  if (allPhotos.length > 2) {
-    const bot = allPhotos[2];
+  if (heroes.length > 2) {
+    const bot = heroes[2];
     const sideBot = document.getElementById('hero-side-bot');
     const img2 = document.createElement('img');
     img2.src = bot.src;
     img2.alt = bot.car || '';
     sideBot.insertBefore(img2, sideBot.firstChild);
-    sideBot.onclick = () => openLightbox(2);
+    sideBot.onclick = () => openLightbox(heroIndices[2]);
     document.getElementById('side-label-bot').innerHTML =
       '<div class="tag">&#9632; ' + (bot.cat || '') + '</div><h3>' + (bot.car || '') + '</h3>';
   }
