@@ -1,0 +1,20 @@
+[
+  {
+    "src": "images/photo1.jpg",
+    "car": "Lamborghini Huracán STO",
+    "cat": "supercar",
+    "meta": "Coastal Highway · Golden Hour"
+  },
+  {
+    "src": "images/photo2.jpg",
+    "car": "Ferrari 488 GTB",
+    "cat": "supercar",
+    "meta": "City Circuit · Blue Hour"
+  },
+  {
+    "src": "images/photo3.jpg",
+    "car": "Porsche 911 GT3",
+    "cat": "classic",
+    "meta": "Mountain Pass · Dusk"
+  }
+]
