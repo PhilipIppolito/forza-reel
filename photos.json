@@ -66,5 +66,42 @@
     "car": "1999 Toyota Altezza RS200 Z Edition",
     "cat": "toyota",
     "meta": "gas Station"
+  },
+  {
+    "src": "images/mt_fuji_m2-1.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
+  },
+  {
+    "src": "images/mt_fuji_m2-2.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
+  },
+  {
+    "src": "images/mt_fuji_m2-3.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
+  },
+  {
+    "src": "images/mt_fuji_m2-4.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
+  },
+  {
+    "src": "images/mt_fuji_m2-5.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
+  },
+  {
+    "src": "images/mt_fuji_m2-6.jpg",
+    "car": "2022 BMW M2 Forza Edition",
+    "cat": "bmw",
+    "meta": "Mt. Fuji"
   }
 ]
+
